@@ -413,7 +413,7 @@ class RouteBuilder
                     ];
 
                     foreach (self::$routes as $existingRoute) {
-                        if ($existingRoute->getPath() === '/' && $existingRoute->getFullPath() === $prefix) {
+                        if ($existingRoute->getPath() === '/' && $existingRoute->getFullPath() === $prefix && array_key_exists(0, $existingRoute->getMiddleware())) {
                             $middlewares = $existingRoute->getMiddleware();
                             $options[2]['middleware'] = $middlewares[0];
                         }

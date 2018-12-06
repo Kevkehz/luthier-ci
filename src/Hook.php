@@ -335,7 +335,7 @@ class Hook
                 }
             }
 
-            $params = $params_result;
+            $params = isset($params_result) && !empty($params_result) ? $params_result: $params;
         }
         else
         {
